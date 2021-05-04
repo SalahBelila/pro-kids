@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link href='css/style.css' rel='stylesheet'>
+        <link href='css/blocks.css' rel='stylesheet'>
+    </head>
+    <body onLoad="init(105, 'forward', ['for', 'forward', 'left'])">
+        <div class='main-container'>
+            <div class="right-panel">
+                <div class="buttons-panel">
+                    <button type='button' onclick='startMovement(event)'>Run</button>
+                    <button onclick="location.href = 'index.html'">Reset</button>
+                </div>
+                <div id='blocked-panel' ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="left-panel">
+                <div class="main-game-panel" id="game-panel"></div>
+                <div class="elements-panel" id="elements-panel"></div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="./js/parser.js"></script>
+    <script src='./js/movement.js'></script>
+</html>
