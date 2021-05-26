@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body onload='init()'>
+        <div id='bricks-panel' style="height: 480px; width: 600px; overflow: scroll;">
+        </div>
+        <xml id="toolbox" style="display: none">
+            <block type="controls_if"></block>
+            <block type="controls_repeat_ext"></block>
+            <block type="logic_compare"></block>
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+            <block type="text"></block>
+            <block type="text_print"></block>
+        </xml>
+        <button type='button' onclick='onClick()'>Click Me</button>
+    </body>
+    <script src='../node_modules/blockly/blockly_compressed.js'></script>
+    <script src='../node_modules/blockly/blocks_compressed.js'></script>
+    <script src='../node_modules/blockly/msg/ar.js'></script>
+    <script src='../node_modules/blockly/msg/js/ar.js'></script>
+    <script src='../node_modules/blockly/javascript_compressed.js'></script>
+    <script src='test.js'></script>
+</html>

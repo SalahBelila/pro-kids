@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/quiz.css">
+    </head>
+    <body onload='init()'>
+        <div id='map-panel' class='map-panel'></div>
+        <div id='blockly-panel' class='blockly-panel'>
+        </div>
+        <xml id="toolbox" style="display: none">
+            <block type="controls_if"></block>
+            <block type="controls_repeat_ext"></block>
+            <block type="logic_compare"></block>
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+            <block type="text"></block>
+            <block type="text_print"></block>
+            <block type="string_length"></block>
+        </xml>
+        <button onclick='generateCode()'>Click me</button>
+    </body>
+    <script src='../../node_modules/blockly/blockly_compressed.js'></script>
+    <script src='../../node_modules/blockly/blocks_compressed.js'></script>
+    <script src='../../node_modules/blockly/msg/ar.js'></script>
+    <script src='../../node_modules/blockly/msg/js/ar.js'></script>
+    <script src='../../node_modules/blockly/javascript_compressed.js'></script>
+    <script src='../js/init.js'></script>
+</html>
