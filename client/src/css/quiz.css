@@ -14,7 +14,7 @@ body {
     display: flex;
     width: 60%;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(67, 139, 207);
 }
 
 .map-panel table {
@@ -25,11 +25,31 @@ body {
 .square {
     width: 1%;
     height: 1%;
-    background-color: white;
+    background-image: url('../assets/img/wave.png');
+    background-size: cover;
+    /* background-color: white; */
 }
 
 .selected-square {
     background-color: yellow;
+}
+
+.road-square {
+    /* background-color: green; */
+    background-image: none;
+}
+
+.road-square div {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.selected-road-square {
+    background-color: yellow;
+    background-image: none;
 }
 
 .blockly-panel {
