@@ -8,13 +8,19 @@ body {
     flex-direction: row;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 .map-panel {
     display: flex;
     width: 60%;
-    height: 100%;
-    background-color: rgb(67, 139, 207);
+    /* height: 84%; */
+    background-image: url('../assets/img/pavement1.jpg');
+    background-size: 10% 10%;
+    padding-top: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
 }
 
 .map-panel table {
@@ -25,35 +31,156 @@ body {
 .square {
     width: 1%;
     height: 1%;
-    background-image: url('../assets/img/wave.png');
+    /* background-image: url('../assets/img/wave.png'); */
     background-size: cover;
     /* background-color: white; */
+    background-image: url('../assets/img/grass1.jpg');
 }
 
 .selected-square {
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
-.road-square {
-    /* background-color: green; */
-    background-image: none;
+.last-square {
+    background-color: white;
 }
 
 .road-square div {
-    width: 50%;
-    height: 50%;
+    width: 87%;
+    height: 87%;
     margin: auto;
-    background-color: yellow;
-    border-radius: 50%;
+    background-image: url('../assets/img/pavement1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 5px black;
+}
+
+.last-square > div {
+    width: 87%;
+    height: 87%;
+    margin: auto;
+    background-image: url('../assets/img/carrot.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 5px black; 
+
 }
 
 .selected-road-square {
-    background-color: yellow;
-    background-image: none;
+    background-color: inherit;
+    background-image: url('../assets/img/rabbit2.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .blockly-panel {
-    height: 100%;
+    /* height: 95%; */
     width: 40%;
+    float: right;
     overflow: scroll;
+    background-image: url('../assets/img/wooden_background.jpg');
+}
+
+.injectionDiv {
+    background-image: url('../assets/img/wooden_background.jpg');
+    background-size: contain;
+}
+
+.blocklySvg {
+    background-color: transparent;
+}
+
+.blocklyFlyout {
+    background-image: url('../assets/img/grass1.jpg');
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.blocklyFlyoutBackground {
+    fill: none;
+    fill-opacity: 1;
+}
+
+.btn-block {
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.btn-block button {
+    width: 10%;
+    height: 100%;
+    float: left;
+    /* margin: 0% 2% 1% 2%; */
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.run-btn {
+    background-image: url('../assets/img/play-button.svg');
+}
+
+.reload-btn {
+    background-image: url('../assets/img/reload-button.svg');
+}
+
+.btn-block button:hover {
+    box-shadow: 1px 1px;
+}
+
+.win {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 12%;
+    width: 50%;
+    height: 30%;
+    margin-left: 25%;
+    background-image: url('../assets/img/wooden_background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+    border: solid 3px black;
+    box-shadow: 1px 1px 3px 3px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 50;
+}
+
+.win * {
+    margin: auto;
+}
+
+.win .btn-block {
+    width: 50%;
+    height: 50%;
+}
+
+.win button {
+    display: block;
+    font-size: 45px;
+    border: solid 3px black;
+    box-shadow: 1px 1px 1px 1px;
+    width: 25%;
+    height: 55%;
+    margin: auto;
+}
+
+.win button:hover {
+    box-shadow: none;
 }

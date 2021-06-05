@@ -2,7 +2,7 @@ Blockly.Blocks['turn_right'] = {
     init: function() {
       this.jsonInit({
             "type": "turn_right",
-            "message0": "إستدر نحو اليمين",
+            "message0": "↻ إستدر نحو اليمين",
             "previousStatement": null,
             "nextStatement": null,
             "args0": [],

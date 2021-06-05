@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/quiz.css">
+    </head>
+    <body onload='init(32,"right", [32, 33, 34, 35, 36, 37,38,39,40,41,42,57,72,87,102,117,132,147,162,177,192,191,190,189,188,187,186,185,184,183,168,153,138,123,108,93,78,63,64,65,66,67,68,69,70,85,100,115,130,145,160,159,158,157,156,155,140,125,110,95,96,97,98])'>
+        <div id='map-panel' class='map-panel'></div>
+        <div id='blockly-panel' class='blockly-panel'>
+            <div class='btn-block'>
+                <button class='run-btn' onclick='generateCode()'></button>
+                <button class='reload-btn' onclick="location.href = '/levels/quiz_1.html'"></button>
+            </div>
+        </div>
+        <xml id="toolbox" style="display: none">
+            
+            <block type="controls_repeat_ext"></block>
+            <block type="math_number"></block>
+            <block type="one_step"></block>
+            <block type="turn_left"></block>
+            <block type="turn_right"></block>
+        </xml>
+        <div id='win' class='win'>
+            <h1>أحسنت</h1>
+            <div class='btn-block'>
+                <button class='retry' onclick="location.href = '/levels/quiz_1.html'"> ↻ </button>
+                <button class='next' onclick="location.href = '/levels/quiz_2.html'"> ▶ </button>
+            </div>
+        </div>
+        <div id='lose' class='win'>
+            <h1>لقد خسرت</h1>
+            <div class='btn-block'>
+                <button class='retry' onclick="location.href = '/levels/quiz_1.html'"> ↻ </button>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </body>
+    <script src='../../node_modules/blockly/blockly_compressed.js'></script>
+    <script src='../../node_modules/blockly/blocks_compressed.js'></script>
+    <script src='../../node_modules/blockly/msg/ar.js'></script>
+    <script src='../../node_modules/blockly/msg/js/ar.js'></script>
+    <script src='../../node_modules/blockly/javascript_compressed.js'></script>
+    <script src='../js/blocks/move_one_step.js'></script>
+    <script src='../js/blocks/turn_left.js'></script>
+    <script src='../js/blocks/turn_right.js'></script>
+    <script src='../js/movement.js'></script>
+</html>

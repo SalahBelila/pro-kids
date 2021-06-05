@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+        <link rel="stylesheet" href="css/user.css">
+    </head>
+    <body>
+        <header>
+            <div class='title-block'>
+                <h3>P r o K i d s</h3>
+            </div>
+            <div class='buttons-block'>
+                <!-- <button class='tspnt-btn settings'>
+                    <i class="fas fa-cog top-menu-icon settings-icon"></i>
+                </button> -->
+                <button class='tspnt-btn login' onclick='openLoginForm()'>
+                    تسجيل الدخول
+                </button>
+                <button class='tspnt-btn signup' onclick='opensignupForm()'>
+                   تسجيل
+                </button>
+            </div>
+        </header>
+        <div class="form-popup" id="loginForm">
+            <form class="form-container">
+              <h1>تسجيل الدخول</h1>
+          
+              <label for="email"><b>بريدالابكتروني</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="psw"><b>كلمة المرور</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">تسجيل الدخول</button>
+              <button type="button" class="btn cancel" onclick="closeLoginForm()">إغلاق</button>
+            </form>
+        </div>
+        <div class="form-popup" id="signupForm">
+            <form method="POST" action='/api/user/signup' onsubmit="return signup(this)" class="form-container">
+              <h1>تسجل </h1>
+
+              <label for="name"><b>الاسم الكامل</b></label>
+              <input type="text" length="60" placeholder="Enter Full Name" name="name" required>
+              
+              <label for="username"><b>الاسم المستخدم</b></label>
+              <input type="text" length="40" placeholder="Enter username" name="username" required>
+          
+              <label for="email"><b>بريد الالكتروني</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="password"><b>كلمة المرور</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+              <label for="cpassword"><b>كلمة المرور</b></label>
+              <input type="password" placeholder="Confirm Password" name="cpassword" required>
+          
+              <button type="submit" class="btn">تسجيل</button>
+              <button type="button" class="btn cancel" onclick="closesignupForm()">إغلاق</button>
+            </form>
+        </div>
+        <section class='main-start'>
+            <p>
+              يمكن للاطفال الصغار ان يتعلمو مبادئ البرج فقد اصبحت الالعاب التفاعلية المخصصة لتعليم الاطفال البرمجة في السن المبكر تتيح الفرص للاطفال بتعلم الاطفال مبادئ الاساسبة في الكود
+              وتطوبير مهاراتهم في تسلسل التفكير المنطقي
+             الدي يكون مقيد في فهم العمليه بشكل اساسي وبمجرد ان يبداء في تعلم البرمجة على جهاز
+            </p>
+        </section>
+        <section class='levels'>
+            <div class='level'>
+                <div class='level-info'>
+                    <div class='level-title'>
+                        المرحلة 1
+                    </div>
+                </div>
+                <div class='quiz-container'>
+                    <div class='quiz' style="background-image: url('assets/img/quiz3.PNG')">
+                        <a href='levels/quiz_3.html'>
+                        </a>
+                    </div>
+                    <div class='quiz' style="background-image: url('assets/img/quiz2.PNG')">
+                        <a href='levels/quiz_2.html'>
+                        </a>
+                    </div>
+                    <div class='quiz' style="background-image: url('assets/img/quiz1.PNG')">
+                        <a href='levels/quiz_1.html'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='level'>
+                <div class='level-info'>
+                    <div class='level-title'>
+                        المرحلة 2
+                    </div>
+                </div>
+                <div class='quiz-container'>
+                    <div class='quiz' style="background-image: url('assets/img/quiz3.PNG')">
+                        <a href='levels/quiz_6.html'>
+                        </a>
+                    </div>
+                    <div class='quiz' style="background-image: url('assets/img/quiz2.PNG')">
+                        <a href='levels/quiz_5.html'>
+                        </a>
+                    </div>
+                    <div class='quiz' style="background-image: url('assets/img/quiz1.PNG')">
+                        <a href='levels/quiz_4.html'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, officia a velit ratione enim quis cumque porro aperiam eligendi dignissimos delectus ullam quas praesentium tempora tenetur veniam repellendus error excepturi.
+        </footer>
+    </body>
+    <script>
+
+        var popupExists = false;
+
+        function openLoginForm() {
+            if (!popupExists) {
+                document.getElementById("loginForm").style.display = "block";
+                popupExists = true;
+            }
+        }
+        
+        function closeLoginForm(e) {
+          document.getElementById("loginForm").style.display = "none";
+          popupExists = false;
+        }
+
+        function opensignupForm() {
+            if (!popupExists) {
+                document.getElementById("signupForm").style.display = "block";
+                popupExists = true;
+            }
+        }
+        
+        function closesignupForm(e) {
+          document.getElementById("signupForm").style.display = "none";
+          popupExists = false;
+        }
+
+        function signup (e) {
+            e.preventDefault();
+            const formData = new FormData(document.getElementById('signupForm'));
+            alert(formData);
+            return false;
+        }
+    </script>
+</html>

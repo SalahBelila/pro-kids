@@ -12,6 +12,7 @@ var global = {
 function init (initialPosition, initialDirection, roadMap = []) {
 
     let squaresTable = document.createElement('table');
+    squaresTable.cellSpacing = "0";
     let tbody = document.createElement('tbody');
     
     for (let i = 0; i < global.rowsNum; i++) {
@@ -21,6 +22,10 @@ function init (initialPosition, initialDirection, roadMap = []) {
             td.className = 'square';
             td.id = i * global.colsNum + j;
             let div = document.createElement('div');
+            if (td.id === roadMap[roadMap.length - 1]) {
+                let lastSquare = document.createElement('div');
+                div.appendChild(lastSquare);
+            }
             td.appendChild(div);
             tr.appendChild(td);
         }
@@ -34,6 +39,9 @@ function init (initialPosition, initialDirection, roadMap = []) {
         roadSquare = document.getElementById(id);
         roadSquare.className = roadSquare.className + ' road-square';
     }
+
+    lastSquare = document.getElementById(roadMap[roadMap.length - 1]);
+    lastSquare.className = lastSquare.className + ' last-square';
     
     global.currentPosition = initialPosition;
     global.currentDirection = initialDirection;
@@ -108,6 +116,15 @@ async function generateCode () {
             throw Error('Character Out of Road Map.');
         }
     }
+
+    if (global.currentPosition === global.roadMap[global.roadMap.length - 1]) {
+        document.getElementById('win').style.display = "flex";
+        document.getElementById('overlay').style.display = "block";
+        return;
+    }
+    
+    document.getElementById('lose').style.display = "flex";
+    document.getElementById('overlay').style.display = "block";
 }
 
 function stepForward () {

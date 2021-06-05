@@ -3,19 +3,33 @@
     <head>
         <link rel="stylesheet" href="../css/quiz.css">
     </head>
-    <body onload='init(1, "right", [1, 2, 3, 4, 5, 6])'>
+    <body onload='init(122,"right", [122, 123, 124, 125])'>
         <div id='map-panel' class='map-panel'></div>
         <div id='blockly-panel' class='blockly-panel'>
+            <div class='btn-block'>
+                <button class='run-btn' onclick='generateCode()'></button>
+                <button class='reload-btn' onclick="location.href = '/levels/quiz_1.html'"></button>
+            </div>
         </div>
         <xml id="toolbox" style="display: none">
-            <block type="controls_if"></block>
-            <block type="controls_repeat_ext"></block>
-            <block type="math_number"></block>
             <block type="one_step"></block>
             <block type="turn_left"></block>
             <block type="turn_right"></block>
         </xml>
-        <button onclick='generateCode()'>Click me</button>
+        <div id='win' class='win'>
+            <h1>أحسنت</h1>
+            <div class='btn-block'>
+                <button class='retry' onclick="location.href = '/levels/quiz_1.html'"> ↻ </button>
+                <button class='next' onclick="location.href = '/levels/quiz_2.html'"> ▶ </button>
+            </div>
+        </div>
+        <div id='lose' class='win'>
+            <h1>لقد خسرت</h1>
+            <div class='btn-block'>
+                <button class='retry' onclick="location.href = '/levels/quiz_1.html'"> ↻ </button>
+            </div>
+        </div>
+        <div id="overlay"></div>
     </body>
     <script src='../../node_modules/blockly/blockly_compressed.js'></script>
     <script src='../../node_modules/blockly/blocks_compressed.js'></script>

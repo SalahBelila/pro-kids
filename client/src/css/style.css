@@ -20,6 +20,8 @@ header {
     position: fixed;
     top: 0;
     background-color: transparent;
+    color: rgb(201, 0, 0);
+    font-family: fantasy;
 }
 
 button:hover {
@@ -49,15 +51,23 @@ button:hover {
 }
 
 .tspnt-btn {
-    background-color: inherit;
+    background-image: url('../assets/img/wooden_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 1.2rem;
     justify-content: center;
     text-align: center;
     margin: auto;
     width: 40%;
     height: 80%;
-    border: solid 2px white;
-    box-shadow: 15%;
+    border: solid 2px black;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.tspnt-btn:active {
+    border: solid 1px black;
+    box-shadow: 1px 1px 0px 0px;
 }
 
 footer {
@@ -74,18 +84,21 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-image: url('../assets/img/1.jpg');
+    background-image: url('../assets/img/landing_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 10% 0% 10% 0%;
+    background-position: center;
+    padding: 30% 0% 20% 0%;
 }
 
 .main-start > p {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     font-family: sans-serif;
-    line-height: 1.5;
+    line-height: 2;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .start-btn {
@@ -111,7 +124,9 @@ footer {
     gap: 10px;
     padding: 10px 0px;
     width: 100%;
-    background-color: white;
+    background-image: url('../assets/img/wooden_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .levels > p {
@@ -129,21 +144,21 @@ footer {
     /* border: solid black; */
     border-radius: 15px;
     margin: auto;
+    margin-bottom: 5%;
+    box-shadow: -2px 5px 5px 5px;
+    border: solid 3px black;
 }
 
 .level-info {
     display: block;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    margin: auto;
 }
 
 .level-desc {
     background-color: transparent;
     width: fit-content;
     height: fit-content;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 13px 0px 13px 0px;
 }
 
 .level-title {
@@ -170,22 +185,25 @@ footer {
 .quiz {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: bottom;
-    text-align: center;
-    background-color: blue;
     min-width: 50px;
     width: 12rem;
     max-width: 220px;
     height: 13rem;
     min-height: 100px;
-    border-radius: 20px;
     margin: auto;
-    padding-bottom: 10%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 13px;
+    box-shadow: -2px 5px 5px 5px;
+    padding: 10%;
 }
 
 .quiz a {
     color: inherit;
     text-decoration: none;
+    height: 100%;
+    width: 100%;
 }
 
 .quiz-desc {
