@@ -6,7 +6,7 @@
     position: fixed;
     top: 7%;
     align-self: center;
-    z-index: 9;
+    z-index: 51;
     width: 50%;
     max-height: 80%;
     overflow: auto;
@@ -25,8 +25,10 @@
     background-position: center;
     border: 3px solid black;
     box-shadow: 1px 1px 1px 1px;
-    /* align-content: center;
-    justify-content: center; */
+}
+
+.form-container * {
+    float: right;
 }
 
 .form-container h1 {
@@ -44,6 +46,10 @@
     align-self: center;
     border: none;
     background: #f1f1f1;
+}
+
+.form-container input::placeholder {
+    float: right;
 }
 
 /* When the inputs get focus, do something */
@@ -75,4 +81,14 @@
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 50;
 }
