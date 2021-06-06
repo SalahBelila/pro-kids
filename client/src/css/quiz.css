@@ -37,10 +37,6 @@ body {
     background-image: url('../assets/img/grass1.jpg');
 }
 
-.selected-square {
-    /* background-color: yellow; */
-}
-
 .last-square {
     background-color: white;
 }
@@ -107,7 +103,7 @@ body {
     /* height: 95%; */
     width: 40%;
     float: right;
-    overflow: scroll;
+    /* overflow-y: scroll; */
     background-image: url('../assets/img/wooden_background.jpg');
 }
 
@@ -159,8 +155,12 @@ body {
     background-image: url('../assets/img/reload-button.svg');
 }
 
+.home-btn {
+    background-image: url('../assets/img/home-button.svg');
+}
+
 .btn-block button:hover {
-    box-shadow: 1px 1px;
+    box-shadow: 1px 0px 1px 1px;
 }
 
 .win {

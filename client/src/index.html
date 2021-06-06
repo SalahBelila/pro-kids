@@ -22,6 +22,7 @@
                 </button>
             </div>
         </header>
+        <div id="overlay"></div>
         <div class="form-popup" id="loginForm">
             <form class="form-container">
               <h1>تسجيل الدخول</h1>
@@ -121,24 +122,28 @@
         function openLoginForm() {
             if (!popupExists) {
                 document.getElementById("loginForm").style.display = "block";
+                document.getElementById("overlay").style.display = "block"
                 popupExists = true;
             }
         }
         
         function closeLoginForm(e) {
           document.getElementById("loginForm").style.display = "none";
+          document.getElementById("overlay").style.display = "none"
           popupExists = false;
         }
 
         function opensignupForm() {
             if (!popupExists) {
                 document.getElementById("signupForm").style.display = "block";
+                document.getElementById("overlay").style.display = "block"
                 popupExists = true;
             }
         }
         
         function closesignupForm(e) {
           document.getElementById("signupForm").style.display = "none";
+          document.getElementById("overlay").style.display = "none"
           popupExists = false;
         }
 
