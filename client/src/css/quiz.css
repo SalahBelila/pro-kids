@@ -70,7 +70,35 @@ body {
 
 .selected-road-square {
     background-color: inherit;
-    background-image: url('../assets/img/rabbit2.gif');
+    background-image: url('../assets/img/rabbit_right.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.selected-road-square-right {
+    background-color: inherit;
+    background-image: url('../assets/img/rabbit_right.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.selected-road-square-left {
+    background-color: inherit;
+    background-image: url('../assets/img/rabbit_left.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.selected-road-square-front {
+    background-color: inherit;
+    background-image: url('../assets/img/rabbit_up.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.selected-road-square-back {
+    background-color: inherit;
+    background-image: url('../assets/img/rabbit_down.gif');
     background-size: contain;
     background-repeat: no-repeat;
 }

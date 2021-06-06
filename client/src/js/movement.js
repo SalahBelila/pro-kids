@@ -5,6 +5,7 @@ var global = {
     currentDirection: undefined, //possible values: front, left, right, back
     timeoutDelay: 500,
     movements: [],
+    directions: [],
     roadMap: [],
     workspace: undefined, //blockly workspace
 }
@@ -104,7 +105,6 @@ function turnRight () {
 async function generateCode () {
     Blockly.JavaScript.addReservedWords('code');
     var code = Blockly.JavaScript.workspaceToCode(global.workspace);
-    console.log(code);
     eval(code);
     console.log(global.movements);
     for (squareId of global.movements) {
@@ -113,7 +113,10 @@ async function generateCode () {
             await sleep(global.timeoutDelay);
         } else {
             console.log(global.roadMap, squareId);
-            throw Error('Character Out of Road Map.');
+            moveToSquare(squareId);
+            await sleep(global.timeoutDelay);
+            break;
+            // throw Error('Character Out of Road Map.');
         }
     }
 
@@ -130,7 +133,7 @@ async function generateCode () {
 function stepForward () {
     const id = global.movements[global.movements.length - 1] || global.currentPosition;
     if (id > -1 && id < global.colsNum) {
-        throw Error("Cannot step forward, out of bounds.");
+        // throw Error("Cannot step forward, out of bounds.");
     }
     global.movements.push(id - global.colsNum);
 }
@@ -138,7 +141,7 @@ function stepForward () {
 function stepBackward () {
     const id = global.movements[global.movements.length - 1] || global.currentPosition;
     if (id > (global.colsNum * global.rowsNum - global.colsNum) && id < (global.colsNum * global.rowsNum)) {
-        throw Error("Cannot step backward, out of bounds.");
+        // throw Error("Cannot step backward, out of bounds.");
     }
     global.movements.push(id + global.colsNum);
 }
@@ -146,7 +149,7 @@ function stepBackward () {
 function stepRight () {
     const id = global.movements[global.movements.length - 1] || global.currentPosition;
     if ((id + 1) % global.colsNum === 0) {
-        throw Error("Cannot step right, out of bounds.");
+        // throw Error("Cannot step right, out of bounds.");
     }
     global.movements.push(id + 1);
 }
@@ -154,7 +157,7 @@ function stepRight () {
 function stepLeft () {
     const id = global.movements[global.movements.length - 1] || global.currentPosition;
     if (id % global.colsNum === 0) {
-        throw Error("Cannot step left, out of bounds.");
+        // throw Error("Cannot step left, out of bounds.");
     }
     global.movements.push(id - 1);
 }
@@ -178,6 +181,7 @@ async function oneStep () {
     } else {
         throw Error(`Cannot move, invalid direction: ${global.currentDirection}`);
     }
+    global.directions.push(global.currentDirection);
 }
 
 function sleep(delay){
